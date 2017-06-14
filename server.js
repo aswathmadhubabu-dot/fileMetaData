@@ -1,7 +1,7 @@
 var formidable = require('formidable'),
     http = require('http'),
     util = require('util');
-
+var port = process.env.PORT || 8080;
 http.createServer(function(req, res) {
   if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
     // parse a file upload
@@ -25,4 +25,4 @@ http.createServer(function(req, res) {
     '<input type="submit" value="Upload">'+
     '</form>'
   );
-}).listen(8080);
+}).listen(port);
